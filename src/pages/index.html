@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .endpoint {
+            background: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .endpoint h2 {
+            margin-top: 0;
+        }
+        .code {
+            background: #eee;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Navigation Service Documentation V1</h1>
+        <div class="endpoint">
+            <h2>GET api/v1/navigation/poi</h2>
+            <p><strong>Description:</strong> Retrieves a list of points of interest.</p>
+            <p><strong>Parameters:</strong> None</p>
+            <p><strong>Response:</strong></p>
+            <div class="code">
+                <pre>
+                    [
+                    {
+                    "name" : string,
+                    "id" : string,
+                    "coordinates" : { "latitude" : number,
+                    "longitude":number}
+                    
+                    }
+                    ]
+                </pre>
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <h2>GET api/v1/navigation/poi/:id</h2>
+            <p><strong>Description:</strong> Retrieves a point of interest by it's Id.</p>
+            <p><strong>Parameters: </strong></p>
+            <div class="code">
+                <pre>
+{
+    "id": string
+}
+                </pre>
+            </div>
+            <p><strong>Response:</strong></p>
+            <div class="code">
+                <pre>
+{
+                    "name" : string,
+                    "id" : string,
+                    "coordinates" : { "latitude" : number,
+                    "longtitude":number}
+                    
+                    }
+                </pre>
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <h2>GET api/v1/navigation/bus</h2>
+            <p><strong>Description:</strong> Retrieves a list of points of bus stops.</p>
+            <p><strong>Parameters:</strong> None</p>
+            <p><strong>Response:</strong></p>
+            <div class="code">
+                <pre>
+                    [
+                    {
+                    "name" : string,
+                    "id" : string,
+                    "coordinates" : { "latitude" : number,
+                    "lonitude":number}
+                    
+                    }
+                    ]
+                </pre>
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <h2>GET api/v1/navigation/bus/:id</h2>
+            <p><strong>Description:</strong> Get a bust stop by it's Id.</p>
+            <p><strong>Parameters: </strong></p>
+            <div class="code">
+                <pre>
+{
+    "id": string
+}
+                </pre>
+            </div>
+            <p><strong>Response:</strong></p>
+            <div class="code">
+                <pre>
+{
+                    "name" : string,
+                    "id" : string,
+                    "coordinates" : { "latitude" : number,
+                    "longitude":number}
+                    
+                    }
+                </pre>
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <h2>GET /rental</h2>
+            <p><strong>Description:</strong> Retrieves a list of all rental stations.</p>
+            <p><strong>Parameters:</strong> None</p>
+            <p><strong>Response:</strong></p>
+            <div class="code">
+                <pre>
+                    [
+                    {
+                    "name" : string,
+                    "id" : string,
+                    "coordinates" : { "latitude" : number,
+                    "longitude":number}
+                    
+                    }
+                    ]
+                </pre>
+            </div>
+        </div>
+
+        <div class="endpoint">
+            <h2>GET api/v1/navigation/rental/:id</h2>
+            <p><strong>Description:</strong> Get a rental station by it's Id</p>
+            <p><strong>Parameters: </strong></p>
+            <div class="code">
+                <pre>
+{
+    "id": string
+}
+                </pre>
+            </div>
+            <p><strong>Response:</strong></p>
+            <div class="code">
+                <pre>
+{
+                    "name" : string,
+                    "id" : string,
+                    "coordinates" : { "latitude" : number,
+                    "longitude":number}
+                    
+                    }
+                </pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
