@@ -41,7 +41,7 @@
     <div class="container">
         <h1>Navigation Service Documentation V1</h1>
         <div class="endpoint">
-            <h2>GET /poi</h2>
+            <h2>GET api/v1/navigation/poi</h2>
             <p><strong>Description:</strong> Retrieves a list of points of interest.</p>
             <p><strong>Parameters:</strong> None</p>
             <p><strong>Response:</strong></p>
@@ -61,7 +61,7 @@
         </div>
 
         <div class="endpoint">
-            <h2>GET /poi/{id}</h2>
+            <h2>GET api/v1/navigation/poi/:id</h2>
             <p><strong>Description:</strong> Retrieves a point of interest by it's Id.</p>
             <p><strong>Parameters: </strong></p>
             <div class="code">
@@ -86,7 +86,7 @@
         </div>
 
         <div class="endpoint">
-            <h2>GET /bus</h2>
+            <h2>GET api/v1/navigation/bus</h2>
             <p><strong>Description:</strong> Retrieves a list of points of bus stops.</p>
             <p><strong>Parameters:</strong> None</p>
             <p><strong>Response:</strong></p>
@@ -95,7 +95,7 @@
                     [
                     {
                     "name" : string,
-                    "stopId" : string,
+                    "id" : string,
                     "coordinates" : { "latitude" : number,
                     "lonitude":number}
                     
@@ -106,7 +106,7 @@
         </div>
 
         <div class="endpoint">
-            <h2>GET /bus/{stopId}</h2>
+            <h2>GET api/v1/navigation/bus/:id</h2>
             <p><strong>Description:</strong> Get a bust stop by it's Id.</p>
             <p><strong>Parameters: </strong></p>
             <div class="code">
@@ -121,7 +121,7 @@
                 <pre>
 {
                     "name" : string,
-                    "stopId" : string,
+                    "id" : string,
                     "coordinates" : { "latitude" : number,
                     "longitude":number}
                     
@@ -157,7 +157,7 @@
             <div class="code">
                 <pre>
 {
-    "stationId": string
+    "id": string
 }
                 </pre>
             </div>
@@ -166,7 +166,7 @@
                 <pre>
 {
                     "name" : string,
-                    "stationId" : string,
+                    "id" : string,
                     "coordinates" : { "latitude" : number,
                     "longitude":number}
                     

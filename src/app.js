@@ -1,12 +1,10 @@
 import express from "express"
 import { collection, addDoc, getDocs, doc, updateDoc, deleteDoc , getDoc} from 'firebase/firestore';
-import { firestore } from '../firebaseConfig.js';
-import docsRoute from "./docs.js"
+import { firestore } from './firebaseConfig.js';
 const app = express();
 
 
 // Define a port
-const PORT = process.env.PORT || 3000;
 
 // Define a simple route
 app.get('/', (req, res) => {
@@ -101,11 +99,5 @@ app.get('/bus/:id', async (req,res) =>{
 
 export default app;
 
-app.use(docsRoute);
 
 // Start the server
-app.listen(PORT, () => {
-
-    console.log(`Server is running on http://localhost:${PORT}`);
-    
-});

@@ -1,6 +1,8 @@
 // app.test.js
 import request from 'supertest';
-import app from '../src/routes/index.js';  
+import app from '../src/app.js'; 
+
+
 
 describe('Express routes', () => {
   it('should return "Hello, World!" on GET /', async () => {
