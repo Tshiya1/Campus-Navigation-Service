@@ -30,16 +30,16 @@ resource "aws_instance" "app_server" {
               sudo yum install -y git
 
               # Clone your private repository using PAT
-              git clone https://retr0-spection:${var.github_token}@github.com/retr0-spection/campus-transport-server.git /home/ec2-user/app
+              git clone https://Tshiya1:${var.github_token}@github.com/Tshiya1/Campus-Navigation-Service.git /home/ec2-user/app
 
               # Change to the app directory
               cd /home/ec2-user/app
 
               # Build Docker image from Dockerfile
-              sudo docker build -t campus-transport-server .
+              sudo docker build -t campus-nav-server .
 
               # Run the Docker container with auto-restart
-              sudo docker run -d --restart unless-stopped -p 80:3000 campus-transport-server
+              sudo docker run -d --restart unless-stopped -p 80:3000 campus-nav-server
               EOF
 
   tags = {
@@ -54,7 +54,7 @@ resource "aws_instance" "app_server" {
 # Associate an existing Elastic IP with the instance
 resource "aws_eip_association" "eip_assoc" {
   instance_id   = aws_instance.app_server.id
-  allocation_id = "eipalloc-07d007b3b62814407"  # Use your actual Elastic IP allocation ID
+  allocation_id = "eipalloc-0b6d6a7a4aca6eb0a"  # Use your actual Elastic IP allocation ID
 }
 
 output "instance_ip" {
