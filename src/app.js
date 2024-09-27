@@ -55,9 +55,8 @@ app.get('/poi/name/:name', async (req,res) =>{
   const q = query(collection(firestore, "POI"), where("name", '==', name))
   const querySnapshot = await getDocs(q)
   querySnapshot.forEach((doc) => {
-    console.log(doc.data())
+    res.send(doc.data())
   })
-  res.send("")
 
 });
 
