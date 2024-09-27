@@ -86,6 +86,28 @@
         </div>
 
         <div class="endpoint">
+            <h2>GET api/v1/navigation/poi/name/:name</h2>
+            <p><strong>Description:</strong> Retrieves a point of interest by it's name.</p>
+            <p><strong>Parameters: </strong></p>
+            <div class="code">
+                <pre>
+{
+    "id": string
+}
+                </pre>
+            </div>
+            <p><strong>Response:</strong></p>
+            <div class="code">
+                <pre>
+                    {  
+                    "coordinates" : {_lat: str, _long: str},
+                    "name" : str
+                    }
+                </pre>
+            </div>
+        </div>
+
+        <div class="endpoint">
             <h2>GET api/v1/navigation/bus</h2>
             <p><strong>Description:</strong> Retrieves a list of points of bus stops.</p>
             <p><strong>Parameters:</strong> None</p>

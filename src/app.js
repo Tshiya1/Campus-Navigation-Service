@@ -1,6 +1,7 @@
 import express from "express"
-import { collection, addDoc, getDocs, doc, updateDoc, deleteDoc , getDoc} from 'firebase/firestore';
+import { collection, addDoc, getDocs, doc, updateDoc, deleteDoc , getDoc, query, where} from 'firebase/firestore';
 import { firestore } from './firebaseConfig.js';
+import axios from "axios";
 const app = express();
 
 
@@ -21,6 +22,15 @@ app.get('/poi', async (req,res) =>{
       }
 });
 
+
+// app.get('/', async (req, res) => {
+//     const res = await axios.get("")
+
+//     if (res.status == 200){
+//       //save data
+//     }
+// })
+
 app.get('/poi/:id', async (req,res) =>{
 
     const { id } = req.params;
@@ -36,6 +46,18 @@ app.get('/poi/:id', async (req,res) =>{
     } catch (error) {
       res.status(500).json({ error: 'Error fetching document: ' + error.message });
     }
+
+});
+
+app.get('/poi/name/:name', async (req,res) =>{
+
+  const { name } = req.params;
+  const q = query(collection(firestore, "POI"), where("name", '==', name))
+  const querySnapshot = await getDocs(q)
+  querySnapshot.forEach((doc) => {
+    console.log(doc.data())
+  })
+  res.send("")
 
 });
 
