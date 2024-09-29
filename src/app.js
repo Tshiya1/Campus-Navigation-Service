@@ -1,9 +1,11 @@
 import express from "express"
+import cors from 'cors'
 import { collection, addDoc, getDocs, doc, updateDoc, deleteDoc , getDoc, query, where} from 'firebase/firestore';
 import { firestore } from './firebaseConfig.js';
 import axios from "axios";
-const app = express();
 
+const app = express();
+app.use(cors());
 
 // Define a port
 
