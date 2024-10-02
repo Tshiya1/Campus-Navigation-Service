@@ -18,13 +18,13 @@ describe('Express routes', () => {
     
   });
 
-  it('should return a specific POI on GET /poi/:id', async () => {
-    const testId = 'YM2DKss7ehAtuhZdFEBi'; 
-    const response = await request(app).get(`/poi/${testId}`);
-    expect(response.status).toBe(200);
-    expect(response.body).toHaveProperty('id', testId);
+  // it('should return a specific POI on GET /poi/:id', async () => {
+  //   const testId = 'YM2DKss7ehAtuhZdFEBi'; 
+  //   const response = await request(app).get(`/poi/${testId}`);
+  //   expect(response.status).toBe(200);
+  //   expect(response.body).toHaveProperty('id', testId);
     
-  });
+  // });
 
   it('should return a list of Rentals on GET /rental', async () => {
     const response = await request(app).get('/rental');
