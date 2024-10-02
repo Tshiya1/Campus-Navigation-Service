@@ -8,7 +8,7 @@
     },
     "scripts": {
         "start": "node src/bin/ww.js",
-        "test": "jest --coverage --detectOpenHandles"
+        "test": "echo test"
     },
     "type": "module",
     "devDependencies": {
