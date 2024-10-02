@@ -58,7 +58,7 @@ app.get('/poi/name/:name', async (req,res) =>{
   const q = query(collection(firestore, "POI"), where("name", '==', name))
   const querySnapshot = await getDocs(q)
   querySnapshot.forEach((doc) => {
-    res.send({...doc.data(), deepLinkUrl:""})
+    res.send({...doc.data(), deepLinkUrl:"com.googleusercontent.apps.852854144164-m2frvklvaeesil11dc8f6sfkf9r2rdap://expo-development-client/?url=http%3A%2F%2F192.168.10.21%3A8081"})
   })
 
 });
