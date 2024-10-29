@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-1"  # Replace with your preferred region
+  region = "us-west-2"  # Replace with your preferred region
 }
 
 data "aws_security_group" "existing_sg" {
@@ -54,7 +54,7 @@ resource "aws_instance" "app_server" {
 # Associate an existing Elastic IP with the instance
 resource "aws_eip_association" "eip_assoc" {
   instance_id   = aws_instance.app_server.id
-  allocation_id = "eipalloc-07d007b3b62814407"  # Use your actual Elastic IP allocation ID
+  allocation_id = "eipalloc-009a3a9840018449a"  # Use your actual Elastic IP allocation ID
 }
 
 output "instance_ip" {
